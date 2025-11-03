@@ -48,6 +48,7 @@ conda-env/
 *.swo
 *~
 *.workspace
+*.code-workspace
 
 # OS files
 .DS_Store
