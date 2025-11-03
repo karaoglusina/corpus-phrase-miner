@@ -1,0 +1,19 @@
+# Core scientific stack
+numpy>=1.23
+pandas>=1.5
+scipy>=1.10
+
+# Plotting and visualization
+matplotlib>=3.6
+seaborn>=0.12
+altair>=5.2
+vegafusion>=1.4
+vl-convert-python>=1.6.0
+pyarrow>=14.0.0
+
+# Jupyter environment
+jupyterlab>=4.0
+ipykernel>=6.20
+
+# File formats
+openpyxl>=3.1

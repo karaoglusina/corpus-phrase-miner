@@ -1,0 +1,20 @@
+name: vis-analysis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - jupyterlab>=4.0
+  - ipykernel>=6.20
+  - numpy>=1.23
+  - pandas>=1.5
+  - scipy>=1.10
+  - matplotlib>=3.6
+  - seaborn>=0.12
+  - openpyxl>=3.1
+  - vl-convert-python>=1.6,<1.7
+  - pyarrow>=14.0.0
+  - pip:
+      - altair>=5.2
+      - vegafusion>=1.4
+
