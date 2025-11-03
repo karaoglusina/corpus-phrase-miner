@@ -1,8 +1,8 @@
 # Corpus Phrase Miner: Discovering Meaningful Phrases Through Statistical Analysis
 
-This toolkit helps researchers and analysts discover meaningful phrases in specialized text corpora—whether from conversations, interviews, documents, or any domain-specific collection. It uses computational linguistics methods to identify word sequences (**n-grams**) that behave as cohesive units of meaning, revealing patterns that may not be visible through simple keyword analysis.
+This toolkit helps you to discover meaningful phrases in specialized text corpora (conversations, interviews, documents, or any domain-specific collection). It uses computational linguistics methods to identify word sequences (**n-grams**) that behave as cohesive units of meaning, revealing patterns that may not be visible through simple keyword analysis.
 
-The approach goes beyond simple frequency counting by identifying phrases that are:
+The aim is to identify phrases that are:
 - **Cohesive**: Words that appear together more than chance would predict
 - **Domain-specific**: Phrases characteristic of your corpus vs general language
 - **Adopted**: Used by multiple speakers/sources, indicating shared concepts
@@ -13,42 +13,39 @@ Starting with thousands of possible word combinations, we systematically filter 
 ## Our Strategy
 
 ### Extract phrases (n-grams) from your corpus
-    - From your text data, we extract every possible bigram and trigram.
-    - (Imagine a sentence with each possible pair/triple of words underlined — that’s our raw search space.)
+- From your text data, we extract every possible bigram and trigram.
+- (Imagine a sentence with each possible pair/triple of words underlined — that’s our raw search space.)
         
 ### Filter for meaningful combinations
-    - We first count frequency.
-    - To distinguish mundane word pairings from real phrases, we use **mutual information (MI)**.
-    - High MI means the words appear together much more often than chance, suggesting a meaningful unit.
+- We first count frequency.
+- To distinguish mundane word pairings from real phrases, we use **mutual information (MI)**.
+- High MI means the words appear together much more often than chance, suggesting a meaningful unit.
         
 ### Check adoption across speakers
-    - A phrase used only once or by a single person is unlikely to represent a shared frame.
-    - We therefore count how many different speakers used each phrase.
-        
+- A phrase used only once or by a single person is unlikely to represent a shared frame.
+- We therefore count how many different speakers used each phrase.
+    
 ### Separate the novel from the mundane by comparing with reference corpora (domain specificity)
     
-    - Many high-MI phrases are ordinary, like "I know."
-    - We look for phrases not found in general English corpora to identify domain-specific terminology.
-    - We also flag phrases that exist in everyday English but occur significantly more often in your corpus — indicating **domain specificity**.
+- Many high-MI phrases are ordinary, like "I know."
+- We look for phrases not found in general English corpora to identify domain-specific terminology.
+- We also flag phrases that exist in everyday English but occur significantly more often in your corpus — indicating **domain specificity**.
         
 ### Compare MI across corpora
     
-    - Some phrases are domain-specific but may not be conceptually meaningful.
-    - By comparing MI between your corpus and a general corpus, we ask: _Is this phrase especially cohesive or characteristic in your specific context?_
-    - A positive difference suggests distinctive usage patterns; negative or neutral differences suggest generic language.
+- Some phrases are domain-specific but may not be conceptually meaningful.
+- By comparing MI between your corpus and a general corpus, we ask: _Is this phrase especially cohesive or characteristic in your specific context?_
+- A positive difference suggests distinctive usage patterns; negative or neutral differences suggest generic language.
         
 ### Visualise and contextualise usage
 
-    - Identified candidate phrases can be plotted on a timeline to understand patterns and illustrate how candidate phrases function in conversation.
-        - Who used it first?
-        - Who picked it up later?
-        - How frequently did it recur?
+- Identified candidate phrases can be plotted on a timeline to understand patterns and illustrate how candidate phrases function in conversation.
+    - Who used it first?
+    - Who picked it up later?
+    - How frequently did it recur?
 
 ### Cluster similar phrases to see evolving themes
-    - By grouping semantically similar phrases, you can track how concepts and themes evolve over time or across different sources. 
-
-
-
+- By grouping semantically similar phrases, you can track how concepts and themes evolve over time or across different sources. 
 
 
 
@@ -60,7 +57,6 @@ Starting with thousands of possible word combinations, we systematically filter 
 - **Domain specificity (log2 ratio + p-value)**: how much more common a phrase is in your corpus than in general language, with statistical confidence. This surfaces domain-specific terminology while filtering out ubiquitous phrases like _I think_.
 - **MI difference (MI z diff)**: how much more **cohesive** a phrase is in your corpus than in general language. Distinguishes domain terms that are merely topical from phrases whose **association** is especially tight in your specific context.
     
-	
 
 ## Overview of the Notebook Series
 
@@ -88,6 +84,7 @@ Starting with thousands of possible word combinations, we systematically filter 
   - Generate interactive plots for exploration
   - Extract examples in context (KWIC)
   - Optionally cluster semantically similar phrases to identify themes
+
 
 ## Environment and Python version
 
